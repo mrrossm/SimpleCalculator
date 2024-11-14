@@ -12,13 +12,13 @@ ORDER = {"+" => 1, "-" => 1, "x" => 2, "/" => 2}
 def do_math(operator, num_01, num_02)
     case operator
     when "+"
-        num_01.to_i + num_02.to_i
+        num_01.to_f + num_02.to_f
     when "-"
-        num_02.to_i - num_01.to_i
+        num_02.to_f - num_01.to_f
     when "x"
-        num_01.to_i * num_02.to_i
+        num_01.to_f * num_02.to_f
     when "/"
-        num_01.to_i / num_02.to_i
+        num_02.to_f / num_01.to_f
     end
 end
 
