@@ -14,7 +14,7 @@ def do_math(operator, num_01, num_02)
     when "+"
         num_01.to_i + num_02.to_i
     when "-"
-        num_01.to_i - num_02.to_i
+        num_02.to_i - num_01.to_i
     when "x"
         num_01.to_i * num_02.to_i
     when "/"
@@ -32,7 +32,7 @@ end
 ARGV.each do |ops|
     if ORDER.has_key?(ops)
         # If ops is an operator
-        if operators.empty? or (ORDER[ops] >= ORDER[peek(operators)])
+        if operators.empty? or (ORDER[ops] > ORDER[peek(operators)])
             operators.push(ops)
         else
             operands.push(do_math(operators.pop, operands.pop, operands.pop))
